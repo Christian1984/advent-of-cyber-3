@@ -84,14 +84,20 @@ https://tryhackme.com/room/adventofcyber3
 
 ## Notes
 
+### Terms and Tools
+
 - AUTHENTICATION is the process of verifying a user's identity
 - AUTHORISATION defines what an authenticated user can or cannot access
 - FUZZING describes automated means of tempering with the element of a website until it exposes a vulnerability
 - Burp Suite is a fuzzing tool set
 
+### Configuration
+
 - Install FoxyProxy Extension
 - Configure Proxy with parameters from BurpSuite -> Proxy -> Options
 - Navigate to 127.0.0.1:8080 (or whatever the burp suite configuration is) and install the root certificate like so: https://null-byte.wonderhowto.com/how-to/use-burp-foxyproxy-easily-switch-between-proxy-settings-0196630/
+
+### The Attack
 
 - Navigate to login form that should be attacked
 - Set FoxyProxy to BurpSuite proxy
