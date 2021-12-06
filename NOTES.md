@@ -110,6 +110,22 @@ https://tryhackme.com/room/adventofcyber3
 
 - https://tryhackme.com/room/principlesofsecurity
 
+# Day 5 - XSS / Cross Site Scripting
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=uA1OHCgArzI
+
+## Learning Objectives
+
+- What is an XSS vulnerability?
+- What Types of XSS vulnerabilities are there?
+- Challenge Walkthrough.
+
+## Resources
+
+- https://tryhackme.com/room/xssgi
+
 ---
 ---
 ---
@@ -118,7 +134,7 @@ https://tryhackme.com/room/adventofcyber3
 
 ## Video Walkthrough
 
-- https://www.youtube.com/watch?v=jT8-HE95G5Q
+- 
 
 ## Learning Objectives
 
