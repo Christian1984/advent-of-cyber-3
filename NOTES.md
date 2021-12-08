@@ -116,6 +116,8 @@ https://tryhackme.com/room/adventofcyber3
 
 - https://tryhackme.com/room/principlesofsecurity
 
+---
+
 # Day 5 - XSS / Cross Site Scripting
 
 ## Video Walkthrough
@@ -131,6 +133,38 @@ https://tryhackme.com/room/adventofcyber3
 ## Resources
 
 - https://tryhackme.com/room/xssgi
+---
+
+# Day 6 - Local File Intrusion Vulnerability (LFI)
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=pGPE5uCI5h8
+
+## Learning Objectives
+
+- Understanding the basics of a Local File Inclusion (LFI) vulnerability
+- Learn how to identify and test for LFI
+- Understanding the possible the impact of an LFI vulnerability by exploiting it
+
+## Notes
+
+- An LFI can occur when a developer includes local files based on user input and without properly validating and sanitizing it.
+- In some cases an LFI could even be chained with a remote code execution attack (RCE) if content can be written to and/or injected into a file on the local file system.
+
+- After inspecting the application it becomes obvious that with the entrypoint (or request param `?err=[filename]`) an LFI can be exploited. 
+- Files on the local file could potentially with `?err=/etc/passwd` for example.
+- Similarly, a php file could be read like this. But since it would be executed, a filter function must be used to encode it first, like so: `https://10-10-84-73.p.thmlabs.com/index.php?err=php://filter/convert.base64-encode/resource=index.php`
+- The content can the be decoded via the command line like so: `echo "QW9DMyBpcyBmdW4hCg==" | base64 --decode AoC3 is fun!`
+
+- Vice versa code can be injected by base64 encoding it (e.g. `echo "AoC3 is fun!" | base64 QW9DMyBpcyBmdW4hCg==`)
+- ... and then append it to the url as `https://10-10-84-73.p.thmlabs.com/index.php?err=data://text/plain;base64,QW9DMyBpcyBmdW4hCg==`
+
+## Resources
+
+- https://tryhackme.com/module/how-the-web-works
+- https://tryhackme.com/room/fileinc
+- https://www.php.net/manual/en/wrappers.php.php
 
 ---
 ---
