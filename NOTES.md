@@ -167,6 +167,43 @@ https://tryhackme.com/room/adventofcyber3
 - https://www.php.net/manual/en/wrappers.php.php
 
 ---
+
+# Day 7 - NoSQL Injection
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=Fmw8ia0sMEc
+
+## Learning Objectives
+
+- What is NoSQL?
+- Understanding NoSQL database
+- Understand Why NoSQL happens
+- Understand what NoSQL injection is
+- Using NoSQL Injection to bypass a login form
+
+## Notes
+
+- Connect to a local mongo db instance via CL with `mongo`
+- Use `show databases` to list all available DBs
+- `use mydb` connects to the db `mydb`. If it does not exists yet, it will be created
+- `db.getCollectionNames()` lists all collections in a given DB
+- `db.createCollection("my_collection")` creates a new collection named `my_collection`
+- `db.my_collection.insert({id: "1", name: "apple"})` inserts a new object into the collection
+- `db.my_collection.find({id: "1"})` finds the entry with `id==1` in collection `my_collection`
+- `db.my_collection.update({id: "1"}, {$set: {name: "banana"}})` updates the name property of the entry with `id==1` in collection `my_collection`
+- `db.my_collection.delete({id: "1"})` deletes the entry with `id==1` from `my_collection`
+
+- For an NoSQL-Injection exploit via JSON (e.g. through an API or such), an attack could look like replacing the password with a wrong guess and then negating it, e.g. `{$ne:"xyz"}`. If the server now runs a query like `db.users.findOne({user: "admin", password: {$ne:""xyz}})` it will return a result and if the server code is written with little security in mind, this could allow us to access the server.
+- For an NoSQL-Injection exploit via a POST or GET request, it is usually necessarry to inject an array of the MongoDB operator, eg. `http://example.thm.labs/login?username=admin&password[$ne]=xyz`.
+- For POST requests, use burp suite's repeater to modify the request parameters before forwarding it to the server.
+
+## Resources
+
+- https://bsonspec.org/
+- https://docs.mongodb.com/manual/reference/operator/query/
+
+---
 ---
 ---
 
