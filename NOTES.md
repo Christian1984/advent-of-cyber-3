@@ -229,6 +229,27 @@ https://tryhackme.com/room/adventofcyber3
 - https://lolbas-project.github.io/lolbas/Binaries/Certutil/
 - https://www.sans.org/tools/shellbags-explorer/
 
+---
+
+# Day 9 - Analyzing Traffic with Wireshark
+
+## Video Walkthrough
+
+- N/A
+
+## Learning Objectives
+
+- Basic skills and knowledge to perform a basic packet analysis using Wireshark
+
+## Notes
+
+- Packets can be filtered by many different properties. Examples include protocols (`http`, `ftp`, `dns` etc.) and http methods (`http.request.method == GET`)
+- Right clicking a packet and then clicking `follow TCP stream` (or `http stream`) can be used to follow the communication for that particular packet
+- Individual Header Sections can be expanded by clicking the `>` next to it!
+
+## Resources
+
+- https://en.wikipedia.org/wiki/Berkeley_Packet_Filter
 
 
 ---
