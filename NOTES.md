@@ -204,6 +204,34 @@ https://tryhackme.com/room/adventofcyber3
 - https://docs.mongodb.com/manual/reference/operator/query/
 
 ---
+
+# Day 8 - PowerShell Transcription Logs
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=oGX7vLtjbic
+
+## Learning Objectives
+
+- Familiarization with working through log files
+- Searching for clues and following them to find the solution to a given problem
+
+## Notes
+
+- RDP into the target machine with `xfreerdp /u:Administrator /p:grinch123! /v:10.10.33.129`
+- The copy and encryption logs are found in `PowerShell_transcript.LAPTOP.Zw6PA+c4.20211128153734` (third log-file in terms of timeline)
+- The `UsrClass.dat` file can be decoded with either `base64 --decode` on linux or `certutil -decode [source] [target]` on windows, or with CyberChef. Finally, view it with `ShellbagsExlorer`
+- The password was hidden in the repos commit messages. When viewed on github, make sure to click the `...` to fully expand the commit message (duh!)
+
+## Resources
+
+- https://tryhackme.com/module/windows-fundamentals
+- https://lolbas-project.github.io/lolbas/Binaries/Certutil/
+- https://www.sans.org/tools/shellbags-explorer/
+
+
+
+---
 ---
 ---
 
