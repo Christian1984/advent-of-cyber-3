@@ -235,7 +235,7 @@ https://tryhackme.com/room/adventofcyber3
 
 ## Video Walkthrough
 
-- N/A
+- https://www.youtube.com/watch?v=LnBT1qubCnc
 
 ## Learning Objectives
 
@@ -251,6 +251,56 @@ https://tryhackme.com/room/adventofcyber3
 
 - https://en.wikipedia.org/wiki/Berkeley_Packet_Filter
 
+---
+
+# Day 10 - 
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=yHjD_07r5xs
+
+## Learning Objectives
+
+- Familiarization with `nmap` and how to use it to scan for services and open ports on a target machine
+- Using this information to further research vulnurabilities on the target machine
+
+## Notes
+
+- Run `nmap -sC {ip}` to scan the target host for open ports and associated services. `-sC` tries to completely connect by running the full 3-way-handshake, `-sS` does not connect, `-sV` scans for the version running
+- Knowing the version number of a given service, e.g. the webserver running on a system, one can check publicly available resources for known vulnerabilities, e.g. https://httpd.apache.org/security/vulnerabilities_24.html
+- Adding the option `-p1-65535` or `-p-` scans for all ports rather than just the most standard 1000 ports
+
+## Resources
+
+- https://tryhackme.com/jr/protocolsandservers
+- https://httpd.apache.org/security/vulnerabilities_24.html
+- https://tryhackme.com/module/network-security
+
+---
+
+# Day 11 - Probe Database Server
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=VJ2YFzTMqNY
+
+## Learning Objectives
+
+- learn how to use `sqsh` to interact with a MS SQL Server
+- learn that if xp_cmdshell is enabled, you can execute system commands and read the output using sqsh
+
+## Notes
+
+- If a server appears to be down to nmap, use flag `-Pn` to skip pinging the machine first. nmap now assumes that the machine is online...
+- Use `sqsh -S [ip] -U [username] - P [passwd]` to access a MS SQL server through the CL.
+- Use `EXEC sp_databases;` to discover databases on the server. Execute with `go`!
+- Use `use db` to access database `db`
+- Use `SELECT * FROM db.INFORMATION_SCHEMA.TABLES;` to discover tables in a `db`.
+- Use `xp_cmdshell "command";` to run shell commands through sqsh, e.g. `xp_cmdshell "whoami"; go` will return the current user.
+
+## Resources
+
+- 
 
 ---
 ---
