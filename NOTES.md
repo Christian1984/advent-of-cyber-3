@@ -303,6 +303,31 @@ https://tryhackme.com/room/adventofcyber3
 - 
 
 ---
+
+# Day 12 - Discovering and Mounting Shares
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=BQqjJwFLLII
+
+## Learning Objectives
+
+- Learn how to use nmap to discover fileservers
+- learn how to discover and mount shares
+- learn how to calculate a fingerprint of a file
+
+## Notes
+
+- discover ports and associated services with `nmap`, use `-Pn` where appropriate
+- if `nfs` or `mountd` was discovered, discover shares with `showmount -e <ip>`
+- mount shares with `sudo mount <ip>:/<sharename> <mountdir>`
+- calculate the MD5 hash of a file with `md5sum <filename>`
+
+## Resources
+
+- N/A
+
+---
 ---
 ---
 
