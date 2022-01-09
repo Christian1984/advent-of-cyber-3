@@ -364,6 +364,35 @@ https://tryhackme.com/room/adventofcyber3
 - https://tryhackme.com/jr/linprivesc
 
 ---
+
+# Day 14 - DevOps (Continuous Integration and Continuous Deployment)
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=NJVGTVbmWKM
+
+## Learning Objectives
+
+- Understanding the CI/CD concept
+- Overview of risks associated with CI/CD
+- Having a basic understanding of CI/CD exploitation vectors
+
+## Notes
+
+- DevOps teams typically use software such as Jenkins, GitLab, Bamboo, AWS CodePipeline, etc., to automate CI/CD steps summarized above
+- Weaknesses in the CI/CD process can vary from file permissions to configuration errors made when installing any CI/CD automation softare
+- Major risks related to a CI/CD integration are mentioned below:
+    - Access security
+    - Permissions
+    - Keys and secrets
+    - User security
+    - Default configuration
+
+## Resources
+
+- Linux Privilege Escalation room
+
+---
 ---
 ---
 
