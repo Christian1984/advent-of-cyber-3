@@ -328,6 +328,42 @@ https://tryhackme.com/room/adventofcyber3
 - N/A
 
 ---
+
+# Day 13 - Privileges Under Windows
+
+## Video Walkthrough
+
+- https://www.youtube.com/watch?v=zIR7Is90N30
+
+## Learning Objectives
+
+- Understanding different types of user privileges in Windows
+- Different privilege escalation techniques
+- Exploiting a privilege escalation vulnerability
+
+## Notes
+
+- Common Attack Vectors
+  - Stored Credentials
+  - Windows Kernel Exploit
+  - Insecure File/Folder Permissions
+  - Insecure Service Permissions
+  - DLL Hijacking
+  - Unquoted Service Path
+  - Always Install Elevated
+  - "AlwaysInstallElevated" policy.
+- List all user with `net users`
+- Check OS version with `systeminfo | findstr /B /C: "OS Name"/C: "OS Version"` (or just `systeminfo` and scan manually)
+- List installed services with `wmic service list`
+- TODO: nc
+- If terminal output is too long to handle, use `session <filename>` to log everything to a filename, then open logfile with vscode or so and search!
+
+## Resources
+
+- https://tryhackme.com/jr/winprivesc
+- https://tryhackme.com/jr/linprivesc
+
+---
 ---
 ---
 
